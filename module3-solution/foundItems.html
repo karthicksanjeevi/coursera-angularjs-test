@@ -1,0 +1,15 @@
+<br/>
+<br/>
+<ul>
+  <li ng-repeat="item in ctrl.found">
+    <div class="row utilizeFullWidth">
+      <div class="col-sm-1">{{item.id}}</div>
+      <div class="col-sm-1">{{item.short_name}}</div>
+      <div class="col-sm-8">{{item.description}}</div>
+
+      <div class="col-sm-2">
+        <button class="btn btn-primary" ng-click="ctrl.onRemove({index: $index});">Don't want this one!</button>
+      </div>
+    </div>
+  </li
+</ul>
