@@ -1,0 +1,20 @@
+<div class="container">
+  <div style="margin-top: 10px; margin-bottom: 10px;" ng-if="myInfoCtrl.notRegistered">
+    <h1> Not Signed Up Yet. </h1> <br/>
+    <a ui-sref="public.signup"> Sign up Now! </a>
+  </div>
+
+  <div ng-if="!myInfoCtrl.notRegistered">
+    <h4>First Name : {{myInfoCtrl.firstname}}</h4>
+    <h4>Last Name  : {{myInfoCtrl.lastname}}</h4>
+    <h4>Email      : {{myInfoCtrl.email}}</h4>
+    <h4>Phone      : {{myInfoCtrl.phone}}</h4>
+
+    <h3>Your Favourite Dishes !! </h3>
+    <menu-item ng-repeat="menuItem in myInfoCtrl.menuItems"
+               menu-item="menuItem">
+    </menu-item>
+  </div>
+
+
+</div>

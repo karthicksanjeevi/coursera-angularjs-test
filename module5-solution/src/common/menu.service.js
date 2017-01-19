@@ -9,6 +9,12 @@ MenuService.$inject = ['$http', 'ApiPath'];
 function MenuService($http, ApiPath) {
   var service = this;
 
+  service.firstname = "";
+  service.lastame = "";
+  service.email = "";
+  service.phone = "";
+  service.favChoice = "";
+
   service.getCategories = function () {
     return $http.get(ApiPath + '/categories.json').then(function (response) {
       return response.data;
@@ -27,6 +33,13 @@ function MenuService($http, ApiPath) {
     });
   };
 
+  service.storeUserInformation = function (firstname, lastname, email, phone, favDish) {
+    service.firstname = firstname;
+    service.lastname = lastname;
+    service.email = email;
+    service.phone = phone;
+    service.favDish = favDish;
+  };
 }
 
 
