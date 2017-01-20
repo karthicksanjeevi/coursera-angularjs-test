@@ -33,6 +33,21 @@ function MenuService($http, ApiPath) {
     });
   };
 
+  service.getFavItem = function (item_shortname) {
+    var config = {};
+    if (item_shortname) {
+      config.params = {'item_shortname': item_shortname};
+    }
+
+    return $http.get(ApiPath + '/menu_items/' + item_shortname +'.json', config)
+    .then(function (response) {
+      return response.data;
+    })
+    .catch(function(error){
+      console.log("Something went wrong !!");
+    });
+  };
+
   service.storeUserInformation = function (firstname, lastname, email, phone, favDish) {
     service.firstname = firstname;
     service.lastname = lastname;

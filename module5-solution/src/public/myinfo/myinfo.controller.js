@@ -22,10 +22,11 @@ function MyInfoController(MenuService) {
   }
   else{
     $ctrl.notRegistered = false;
-    var data = MenuService.getMenuItems($ctrl.favDish);
+    var data = MenuService.getFavItem($ctrl.favDish);
 
     data.then(function(response){
-      $ctrl.menuItems = response.menu_items;
+      console.log(response);
+      $ctrl.menuItems = response;
     });
   }
 }

@@ -18,10 +18,10 @@ function SignUpController(MenuService) {
   $ctrl.successRegistration = false;
 
   $ctrl.storeRegistrationData = function(){
-    var data = MenuService.getMenuItems($ctrl.favDish);
+    var data = MenuService.getFavItem($ctrl.favDish);
 
     data.then(function(response){
-      if(response.menu_items.length == 0){
+      if(response == undefined){
         $ctrl.favDishNotFound = true;
       }
       else{

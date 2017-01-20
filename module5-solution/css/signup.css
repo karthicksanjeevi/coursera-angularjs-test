@@ -5,6 +5,7 @@ input {
 }
 button {
   font-size: 24px;
+  color: black;
 }
 
 .ng-touched.ng-valid {
@@ -22,3 +23,4 @@ button {
 #info {
   margin-top: 20px;
 }
+
